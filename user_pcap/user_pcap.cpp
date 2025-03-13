@@ -22,8 +22,10 @@ int CUserPcap::DisplayInfo(int res, struct pcap_pkthdr *header,
 
     // 174517050 : https://www.kisa.or.kr/ : 58.235.102.10
     // 2216011968 : guest ip : 192.168.21.132
-    if ((nSrcAddr == 2216011968 || nDstAddr == 2216011968) &&
-        (nSrcAddr == 174517050 || nDstAddr == 174517050) &&
+    // if ((nSrcAddr == 2216011968 || nDstAddr == 2216011968) &&
+    //    (nSrcAddr == 174517050 || nDstAddr == 174517050) &&
+    //    pIP->Protocol == 6) {
+    if ((nSrcAddr == 174517050 || nDstAddr == 174517050) &&
         pIP->Protocol == 6) {
 
       H_TCP *pTCP = (H_TCP *)(pkt_data + sizeof(H_ETHER) + pIP->IHL * 4);
